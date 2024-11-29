@@ -1,0 +1,27 @@
+﻿@model X.PagedList.IPagedList<ListaTareas.Models.Todo.Todo>;
+
+<ul class="pagination">
+    @if (Model.HasPreviousPage)
+    {
+        <li class="page-item p-2">
+            <a asp-route-page="@(Model.PageNumber - 1)"
+               asp-route-searchString="@ViewData["CurrentSearch"]"
+               class="btn btn-secondary">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Anterior</span>
+            </a>
+        </li>
+    }
+    @if (Model.HasNextPage)
+    {
+        <li class="page-item p-2">
+            <a asp-route-page="@(Model.PageNumber + 1)"
+               asp-route-searchString="@ViewData["CurrentSearch"]"
+               class="btn btn-secondary">
+                <span class="sr-only">Siguiente</span>
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    }
+</ul>
+<p>Pagina @Model.PageNumber de @Model.PageCount</p>

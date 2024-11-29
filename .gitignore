@@ -1,0 +1,9 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/ListaTareas/appsettings.json
+/ListaTareas/appsettings.json
+/ListaTareas/appsettings.json
+/ListaTareas/Properties/launchSettings.json
+/ListaTareas/appsettings.Development.json

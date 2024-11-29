@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\Programacion\\ASP.NET core MVC\\ListaTarea\\ListaTareas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0336B833-BC95-4D5C-9C66-4047A5137453}|ListaTareas\\ListaTareas.csproj|c:\\users\\usuario\\documents\\programacion\\asp.net core mvc\\listatarea\\listatareas\\listatareas\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{0336B833-BC95-4D5C-9C66-4047A5137453}|ListaTareas\\ListaTareas.csproj|solutionrelative:listatareas\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A278A35B-3655-44FB-BAA5-AF67140DF012}|TestProject1\\TestProject1.csproj|c:\\users\\usuario\\documents\\programacion\\asp.net core mvc\\listatarea\\listatareas\\testproject1\\todoservicesshould.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A278A35B-3655-44FB-BAA5-AF67140DF012}|TestProject1\\TestProject1.csproj|solutionrelative:testproject1\\todoservicesshould.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Programacion\\ASP.NET core MVC\\ListaTarea\\ListaTareas\\ListaTareas\\.gitignore",
+              "RelativeDocumentMoniker": "ListaTareas\\.gitignore",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Programacion\\ASP.NET core MVC\\ListaTarea\\ListaTareas\\ListaTareas\\.gitignore",
+              "RelativeToolTip": "ListaTareas\\.gitignore",
+              "ViewState": "AQIAANkBAAAAAAAAAAAAANsBAAAFAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2024-11-29T20:10:32.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TodoServicesShould.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\Programacion\\ASP.NET core MVC\\ListaTarea\\ListaTareas\\TestProject1\\TodoServicesShould.cs",
+              "RelativeDocumentMoniker": "TestProject1\\TodoServicesShould.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\Programacion\\ASP.NET core MVC\\ListaTarea\\ListaTareas\\TestProject1\\TodoServicesShould.cs",
+              "RelativeToolTip": "TestProject1\\TodoServicesShould.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAMwDEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T19:48:53.142Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+﻿@model ListaTareas.Models.Users.ManageUserModel;
+
+@{
+    ViewData["Title"] = "Adminstracion de usuarios";
+}
+
+<h2>@ViewData["Title"]</h2>
+<h3>Adminstradores</h3>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var admin in Model.Adminstradors!)
+        {
+            <tr>
+                <td>@admin.Id</td>
+                <td>@admin.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Usuarios</h3>
+
+@foreach (var user in Model.Everyone!)
+{
+    <div class="card mb-3">
+        <div class="card-header">
+            Id usuario : @user.Id
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@user.UserName</h5>
+        </div>
+        <div class="card-footer">
+            <form asp-action="Delete" method="post" asp-route-id="@user.Id">
+                <span id="confirmDeleteSpan_@user.Id" style="display:none">
+                    <span>¿Eliminar usuario?</span>
+                    <button type="submit" class="btn btn-danger">Si</button>
+                    <a class="btn btn-primary"
+                       onclick="confirmDelete('@user.Id', false)">No</a>
+                </span>
+                <span id="deleteSpan_@user.Id">
+                    <a class="btn btn-danger"
+                       onclick="confirmDelete('@user.Id', true)">Eliminar</a>
+                </span>
+            </form>
+        </div>
+    </div>
+
+}
+
