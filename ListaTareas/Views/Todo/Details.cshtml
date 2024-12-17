@@ -1,0 +1,76 @@
+﻿@model ListaTareas.Models.Todo.Todo;
+
+@{
+    ViewData["Title"] = "Detalles de la tarea";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div class="row">
+    <div class="col-md-4">
+        <hr />
+        <form asp-action="EditConfirm" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="UserId" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label fw-bold">Titulo</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-4">
+                <label asp-for="CreatedAt" class="control-label fw-bold">Fecha de finalización</label>
+                <input asp-for="CreatedAt" class="form-control" />
+                <span asp-validation-for="CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <p>Acciones</p>
+                <button value="Modificar" class="btn btn-secondary">
+                    Modificar <i class="bi bi-bookmark-check"></i>
+                </button>
+                <div class="vr"></div>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Eliminar
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal comfir -->
+<div class="modal fade bd-example-modal-sm" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Eliminar tarea</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Seguro de elminar esta tarea?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a asp-controller="Todo"
+                   asp-action="Delete"
+                   asp-route-id="@Model.Id"
+                   class="btn btn-danger">
+                   Eliminar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5">
+    <a asp-action="Index" class="btn btn-dark">
+        <i class="bi bi-box-arrow-in-left"></i>
+        Volver a la lista
+    </a>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

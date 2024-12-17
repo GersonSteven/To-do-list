@@ -485,5 +485,4 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 
-# vs files.
-.vs
+.vs/

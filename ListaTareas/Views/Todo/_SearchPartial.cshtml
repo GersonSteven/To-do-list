@@ -1,7 +1,16 @@
-﻿<div class="col">
-    <form class="mt-3" asp-action="Index" method="get">
-        <input class="rounded p-1" type="text" name="searchString" placeholder=" Palabra clave"/>
-        <input class="btn btn-secondary" type="submit" value="Filtrar" />
-        <a asp-action="Index" class="btn btn-dark">Ver lista completa</a>
-    </form>
+﻿
+<div class="row p-1">
+    <div class="col-7">
+        <form asp-action="Index" method="get">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Palabra clave" name="searchString">
+                <div class="input-group-btn">
+                    <button class="btn btn-secondary" type="submit"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col col-lg-2">
+        <a asp-action="Index" class="btn btn-dark">Lista completa</a>
+    </div>
 </div>

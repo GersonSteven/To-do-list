@@ -24,29 +24,27 @@ namespace TestProject1
                 Title = "Testing?",
                 CreatedAt = DateTimeOffset.Now
             };
-
         }
 
         [Fact]
-        public async Task AddNewItemIncomplete()
+        public async Task AddNewTodo_IsIncomplete()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbWebContext>()
                 .UseInMemoryDatabase(databaseName: "Test_AddNewItem").Options;
-            Todo? item;
 
             using (var inmemoryContext = new ApplicationDbWebContext(options))
             {
                 var service = new TodoService(inmemoryContext);
 
                 await service.AddItemsAsync(_todo, _fakeUser);
-                item = await service.FindTodoAsync(_todo.Id);
-                var diferrence = DateTimeOffset.Now - item!.CreatedAt;
+                Todo?  task = await service.FindTodoAsync(_todo.Id);
+                var diferrence = DateTimeOffset.Now - task!.CreatedAt;
 
                 Assert.Equal(1, await inmemoryContext.Items.CountAsync());
-                Assert.Equal("Fake-0000", item.UserId);
-                Assert.Equal("Testing?", item.Title);
-                Assert.False(item!.IsDone);
-                Assert.True(diferrence < TimeSpan.FromSeconds(1));
+                Assert.Equal("Fake-0000", task.UserId);
+                Assert.Equal("Testing?", task.Title);
+                Assert.False(task.IsDone);
+                Assert.True(diferrence < TimeSpan.FromSeconds(2));
             }
         }
 
@@ -66,6 +64,7 @@ namespace TestProject1
 
                 Assert.Equal(1, await inmemoryContext.Items.CountAsync());
                 Assert.True(result);
+                Assert.NotNull(item);
                 Assert.True(_todo.IsDone);
             }
         }

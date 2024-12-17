@@ -90,7 +90,7 @@ namespace ListaTareas.Controllers
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> Edit(Guid id)
+        public async Task<IActionResult> Details(Guid id)
         {
             if (id == Guid.Empty) return RedirectToAction("Index");
 

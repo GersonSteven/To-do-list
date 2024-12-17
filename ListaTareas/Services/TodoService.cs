@@ -21,7 +21,7 @@ namespace ListaTareas.Services
                 return await _context.Items.Where(
                     x => x.IsDone == false && 
                     x.UserId == user.Id && 
-                    x.Title!.Contains(searchString.ToUpper()))
+                    x.Title.Contains(searchString.ToUpper()))
                     .OrderBy(x => x.CreatedAt)
                     .ToArrayAsync();
             }
@@ -34,8 +34,9 @@ namespace ListaTareas.Services
         public async Task<bool> AddItemsAsync(Todo todo, IdentityUser user)
         {
             todo.Id = Guid.NewGuid();
-            todo.IsDone = false;
             todo.UserId = user.Id;
+
+            if (todo.CreatedAt < DateTime.Now.Date) { return false; }
 
             _context.Items.Add(todo);
 
