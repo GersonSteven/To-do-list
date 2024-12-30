@@ -1,4 +1,4 @@
-﻿    <!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand font-monospace" asp-area="" asp-controller="Todo" asp-action="Index">Lista Tareas</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -37,6 +37,21 @@
                 </div>
             </div>
         </nav>
+
+        @*Offcanvas navigation.*@
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Menu</h5>
+                <button type="button" class="btn-close bg-gray" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>@await Html.PartialAsync("_LoginPartial")</div>
+                <div>@await Html.PartialAsync("_AdminActionsPartial")</div>
+                <hr />
+                <div>@await Html.PartialAsync("_DropDownPartial")</div>
+            </div>
+        </div>
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">

@@ -58,32 +58,24 @@ function confirmDelete(uniqueId, isDeleteClicked) {
 
     setTheme(getPreferredTheme())
 
-    const showActiveTheme = (theme, focus = false) => {
-        const themeSwitcher = document.querySelector('#bd-theme')
+    const showActiveTheme = (theme) => {
+        const activeIcons = document.querySelectorAll('.theme-icon-active use');
+        const activeButton = document.querySelectorAll(`[data-bs-theme-value="${theme}"]`);
 
-        if (!themeSwitcher) {
-            return
+        if (activeIcons.length > 0) {
+            const activeSvg = activeButton[0].querySelector('svg use').getAttribute('href');
+            activeIcons.forEach((icon) => icon.setAttribute('href', activeSvg));
         }
 
-        const themeSwitcherText = document.querySelector('#bd-theme-text')
-        const activeThemeIcon = document.querySelector('.theme-icon-active use')
-        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-        const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
+        document.querySelectorAll('[data-bs-theme-value]').forEach((button) => {
+            button.classList.remove('active');
+            button.setAttribute('aria-pressed', 'false');
+        });
 
-        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-            element.classList.remove('active')
-            element.setAttribute('aria-pressed', 'false')
-        })
-
-        btnToActive.classList.add('active')
-        btnToActive.setAttribute('aria-pressed', 'true')
-        activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-        const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
-        themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
-
-        if (focus) {
-            themeSwitcher.focus()
-        }
+        activeButton.forEach((button) => {
+            button.classList.add('active');
+            button.setAttribute('aria-pressed', 'true');
+        });
     }
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
@@ -102,7 +94,7 @@ function confirmDelete(uniqueId, isDeleteClicked) {
                     const theme = toggle.getAttribute('data-bs-theme-value')
                     setStoredTheme(theme)
                     setTheme(theme)
-                    showActiveTheme(theme, true)
+                    showActiveTheme(theme)        
                 })
             })
     })

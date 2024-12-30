@@ -27,7 +27,7 @@ namespace TestProject1
         }
 
         [Fact]
-        public async Task AddNewTodo_IsIncomplete()
+        public async Task AddNewItem_IncompleteTodo()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbWebContext>()
                 .UseInMemoryDatabase(databaseName: "Test_AddNewItem").Options;
@@ -49,7 +49,7 @@ namespace TestProject1
         }
 
         [Fact]
-        public async Task MarkDoneTodoExsits()
+        public async Task MarkDoneTodo_ExsitsTodo()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbWebContext>()
                 .UseInMemoryDatabase(databaseName: "Test_MarkDoneTodoExists").Options;
