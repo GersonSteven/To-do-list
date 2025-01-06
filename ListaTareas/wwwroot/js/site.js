@@ -7,6 +7,15 @@ $(document).ready(function () {
     $('.done-checkbox').on('click', function (e) {
         markDoneComplete(e.target);
     });
+
+    $('.detail-data').on('click', function (e) {
+        var row = e.target;
+
+        if (row && row.dataset.id) {
+            const todoId = row.dataset.id;
+            window.location.href = `/Details/${todoId}`;
+        }
+    });
 });
 
 function markDoneComplete(checkbox) {
@@ -32,7 +41,7 @@ function confirmDelete(uniqueId, isDeleteClicked) {
 }
 
 
-// Color mode.
+// Color theme logic.
 (() => {
     'use strict'
 

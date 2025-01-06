@@ -3,7 +3,7 @@
 
 namespace ListaTareas.Models.Todo
 {
-    public class Todo
+    public class Item
     {
         public Guid Id { get; set; }
         [Required, Display(Name = "Titulo.")]

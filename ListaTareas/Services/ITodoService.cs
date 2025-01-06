@@ -5,11 +5,11 @@ namespace ListaTareas.Services
 {
     public interface ITodoService
     {
-        Task<Todo[]> GetImcompleteAsync(IdentityUser user, string searchString);
-        Task<bool> AddItemsAsync(Todo todo, IdentityUser user);
+        Task<Item[]> GetImcompleteAsync(IdentityUser user, string searchString);
+        Task<bool> AddItemsAsync(Item todo, IdentityUser user);
         Task<bool> MarkDoneAsync(Guid id, IdentityUser user);
-        Task<bool> EditTodoAsync(Todo todo);
-        Task<Todo?> FindTodoAsync(Guid id);
+        Task<bool> EditTodoAsync(Item todo);
+        Task<Item?> FindTodoAsync(Guid id);
         Task<bool> DeleteTodoAsync(Guid id);
     }
 }

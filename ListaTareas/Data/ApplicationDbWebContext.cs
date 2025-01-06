@@ -12,13 +12,13 @@ namespace ListaTareas.Data
         public ApplicationDbWebContext(DbContextOptions<ApplicationDbWebContext> options)
             : base (options) { }
 
-        public DbSet<Todo> Items { get; set; }
+        public DbSet<Item> Items { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<Todo>()
+            builder.Entity<Item>()
             .ToTable(tb => tb.HasTrigger("someTrigger"));
 
 

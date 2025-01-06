@@ -9,7 +9,7 @@ namespace TestProject1
     public class TodoServicesShould
     {
         private readonly IdentityUser _fakeUser;
-        private readonly Todo _todo;
+        private readonly Item _todo;
 
         public TodoServicesShould()
         {
@@ -19,7 +19,7 @@ namespace TestProject1
                 UserName = "fake@fake"
             };
 
-            _todo = new Todo
+            _todo = new Item
             {
                 Title = "Testing?",
                 CreatedAt = DateTimeOffset.Now
@@ -37,7 +37,7 @@ namespace TestProject1
                 var service = new TodoService(inmemoryContext);
 
                 await service.AddItemsAsync(_todo, _fakeUser);
-                Todo?  task = await service.FindTodoAsync(_todo.Id);
+                Item?  task = await service.FindTodoAsync(_todo.Id);
                 var diferrence = DateTimeOffset.Now - task!.CreatedAt;
 
                 Assert.Equal(1, await inmemoryContext.Items.CountAsync());

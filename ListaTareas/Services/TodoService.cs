@@ -14,7 +14,7 @@ namespace ListaTareas.Services
             _context = context;
         }
 
-        public async Task<Todo[]> GetImcompleteAsync(IdentityUser user, string searchString)
+        public async Task<Item[]> GetImcompleteAsync(IdentityUser user, string searchString)
         {
             if (!string.IsNullOrEmpty(searchString))
             {
@@ -31,7 +31,7 @@ namespace ListaTareas.Services
                 .ToArrayAsync();
         }
 
-        public async Task<bool> AddItemsAsync(Todo todo, IdentityUser user)
+        public async Task<bool> AddItemsAsync(Item todo, IdentityUser user)
         {
             todo.Id = Guid.NewGuid();
             todo.UserId = user.Id;
@@ -60,12 +60,12 @@ namespace ListaTareas.Services
             return saveResult == 1;
         }
 
-        public async Task<Todo?> FindTodoAsync(Guid id)
+        public async Task<Item?> FindTodoAsync(Guid id)
         {
             return await _context.Items.FindAsync(id);
         }
 
-        public async Task<bool> EditTodoAsync(Todo todo)
+        public async Task<bool> EditTodoAsync(Item todo)
         {
             _context.Update(todo);
 

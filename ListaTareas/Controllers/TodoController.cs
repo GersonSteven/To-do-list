@@ -41,7 +41,7 @@ namespace ListaTareas.Controllers
         }
 
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddItem(Todo todo)
+        public async Task<IActionResult> AddItem(Item todo)
         {
             if (!ModelState.IsValid)
             {
@@ -90,6 +90,7 @@ namespace ListaTareas.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet("Details/{id}")]
         public async Task<IActionResult> Details(Guid id)
         {
             if (id == Guid.Empty) return RedirectToAction("Index");
@@ -102,7 +103,7 @@ namespace ListaTareas.Controllers
         }
 
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditConfirm(Todo todo)
+        public async Task<IActionResult> EditConfirm(Item todo)
         {
             if (!ModelState.IsValid) return RedirectToAction("Edit");
 
