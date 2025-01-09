@@ -1,33 +1,32 @@
-﻿<div class="btn-group mt-2">
-    <button id="bd-theme"
-            class="btn btn-outline-secondary dropdown-toggle"
-            type="button"
-            aria-expanded="false"
-            data-bs-toggle="dropdown">
-        <span id="bd-theme-text"></span>
-        <svg class="theme-icon-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-            <use href="#icon-dark" id="theme-icon-use"></use>
-        </svg>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-lg-end">
-        <li>
-            <button class="dropdown-item" data-bs-theme-value="light">
-                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                    <use href="#icon-light"></use>
-                </svg>
-                Light
-            </button>
-        </li>
-        <li>
-            <button class="dropdown-item" data-bs-theme-value="dark">
-                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                    <use href="#icon-dark"></use>
-                </svg>
-                Dark
-            </button>
-        </li>
-    </ul>
-</div>
+﻿
+<a id="bd-theme"
+   class="btn btn-outline-secondary dropdown-toggle"
+   type="button"
+   aria-expanded="false"
+   data-bs-toggle="dropdown">
+    <span id="bd-theme-text"></span>
+    <svg class="theme-icon-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <use href="#icon-dark" id="theme-icon-use"></use>
+    </svg>
+</a>
+<ul class="dropdown-menu dropdown-menu-end fix-dropdown">
+    <li>
+        <button class="dropdown-item" data-bs-theme-value="light">
+            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <use href="#icon-light"></use>
+            </svg>
+            Light
+        </button>
+    </li>
+    <li>
+        <button class="dropdown-item" data-bs-theme-value="dark">
+            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <use href="#icon-dark"></use>
+            </svg>
+            Dark
+        </button>
+    </li>
+</ul>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="icon-light" viewBox="0 0 16 16">

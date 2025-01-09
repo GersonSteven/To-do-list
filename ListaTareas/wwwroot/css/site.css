@@ -38,6 +38,11 @@ div.todo-panel {
 table tr.done {
     text-decoration: line-through;
     color: #888;
+    transition-duration: 2s;
+}
+
+table tbody tr:hover {
+    cursor: pointer;
 }
 
 .custom-checkbox input {

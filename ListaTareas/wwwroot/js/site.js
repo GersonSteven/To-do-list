@@ -16,8 +16,20 @@ $(document).ready(function () {
             window.location.href = `/Details/${todoId}`;
         }
     });
+
+    window.addEventListener('resize', () => {
+        var dropdown = $('.fix-dropdown');
+
+        if (window.innerWidth <= 575) {
+            dropdown.removeClass('dropdown-menu-end');
+        }
+        else {
+            dropdown.addClass('dropdown-menu-end');
+        }
+    });
 });
 
+// Functions site.
 function markDoneComplete(checkbox) {
     checkbox.disabled = true;
 
@@ -39,7 +51,6 @@ function confirmDelete(uniqueId, isDeleteClicked) {
         $('#' + confirmDeleteSpan).hide();
     }
 }
-
 
 // Color theme logic.
 (() => {
@@ -103,8 +114,8 @@ function confirmDelete(uniqueId, isDeleteClicked) {
                     const theme = toggle.getAttribute('data-bs-theme-value')
                     setStoredTheme(theme)
                     setTheme(theme)
-                    showActiveTheme(theme)        
+                    showActiveTheme(theme)
                 })
             })
-    })
+    });
 })();
