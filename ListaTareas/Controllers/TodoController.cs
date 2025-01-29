@@ -3,7 +3,6 @@ using ListaTareas.Models.Todo;
 using ListaTareas.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using X.PagedList;
 using X.PagedList.Extensions;
 
 namespace ListaTareas.Controllers

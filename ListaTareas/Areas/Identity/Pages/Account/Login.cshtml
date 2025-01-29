@@ -2,10 +2,11 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Inicar sesion";
+    ViewData["Title"] = "Login";
 }
 
 <h1>@ViewData["Title"]</h1>
+<h2>Register with your account</h2>
 <div class="row">
     <div class="col-md-4">
         <section>
@@ -29,16 +30,17 @@
                     </label>
                 </div>
                 <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-dark">Iniciar sesion</button>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-dark">login</button>
                 </div>
-                <div class="mt-3">
-                    <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    
-                    <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
+                <div class="mt-3 containter">
+                    <div class="row">
+                        <div class="col mt-2">
+                            <a id="forgot-password" class="btn btn-secondary" asp-page="./ForgotPassword">Forgot your password?</a>
+                        </div>
+                        <div class="col-auto mt-2">
+                            <a id="resend-confirmation" class="btn btn-primary" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                        </div>
+                    </div>
                 </div>
             </form>
         </section>

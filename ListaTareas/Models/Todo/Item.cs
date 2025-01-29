@@ -6,12 +6,12 @@ namespace ListaTareas.Models.Todo
     public class Item
     {
         public Guid Id { get; set; }
-        [Required, Display(Name = "Titulo.")]
+        [Required, Display(Name = "Title.")]
         public string Title { get; set; }
         public bool IsDone { get; set; } = false;
         public string? UserId { get; set; }
         [Required]
-        [DataType(DataType.DateTime), Display(Name = "Fecha y hora de finalizacion.")]
+        [DataType(DataType.DateTime), Display(Name = "Expiration date & time.")]
         public DateTimeOffset? CreatedAt { get; set; }
     }
 }

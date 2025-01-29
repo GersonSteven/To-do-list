@@ -2,6 +2,7 @@ using ListaTareas.Data;
 using ListaTareas.Models.Todo;
 using ListaTareas.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.CodeAnalysis.Options;
 using Microsoft.EntityFrameworkCore;
 
 namespace TestProject1
@@ -27,7 +28,7 @@ namespace TestProject1
         }
 
         [Fact]
-        public async Task AddNewItem_IncompleteTodo()
+        public async Task Add_NewItem_IncompleteTodo()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbWebContext>()
                 .UseInMemoryDatabase(databaseName: "Test_AddNewItem").Options;
@@ -49,7 +50,7 @@ namespace TestProject1
         }
 
         [Fact]
-        public async Task MarkDoneTodo_ExsitsTodo()
+        public async Task Mark_DoneTodo_ExsitsTodo()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbWebContext>()
                 .UseInMemoryDatabase(databaseName: "Test_MarkDoneTodoExists").Options;
@@ -66,6 +67,24 @@ namespace TestProject1
                 Assert.True(result);
                 Assert.NotNull(item);
                 Assert.True(_todo.IsDone);
+            }
+        }
+
+        [Fact]
+        public async Task Delete_Task_ExsistsTask()
+        {
+            var options = new DbContextOptionsBuilder<ApplicationDbWebContext>()
+                .UseInMemoryDatabase(databaseName: "Delete_taskTest").Options;
+
+            using (var inmemoryContext = new ApplicationDbWebContext(options))
+            {
+                var mockService = new TodoService(inmemoryContext);
+
+                await mockService.AddItemsAsync(_todo, _fakeUser);
+                bool response = await mockService.DeleteTodoAsync(_todo.Id);
+
+                Assert.True(response);
+                Assert.Equal(0, await inmemoryContext.Items.CountAsync());
             }
         }
     }

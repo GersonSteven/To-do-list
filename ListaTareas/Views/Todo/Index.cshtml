@@ -3,21 +3,24 @@
 @using X.PagedList;
 
 @{
-    ViewData["Title"] = "Maneja tu lista de tareas";
+    ViewData["Title"] = "Mamage your to-do list";
 }
 
 <div class="container">
-    <div class="row p-1">
-        <div class="col">
-            <a asp-action="Create" class="btn btn-dark">
-                Agregar tarea
+    <div class="row p-1 mt-2">
+        <div class="col-auto">
+            <a asp-action="Create" class="btn btn-secondary">
+                Add task
                 <i class="bi bi-journal-check"></i>
             </a>
         </div>
+        <div class="col">
+            @{
+                await Html.RenderPartialAsync("_SearchPartial");
+            }
+        </div>
     </div>
-    @{
-        await Html.RenderPartialAsync("_SearchPartial");
-    }
+ 
 </div>
 
 @if (Model.Count == 0)
@@ -28,12 +31,12 @@
 }
 else
 {
-    <table class="table table-hover mt-1">
-        <thead class="table-dark">
+    <table class="table table-hover mt-4 text-center">
+        <thead class="table-secondary">
             <tr>
                 <th>&#x2714;</th>
-                <th>Tarea</th>
-                <th>Vencimiento</th>
+                <th>Task</th>
+                <th>Expiration</th>
             </tr>
         </thead>
         <tbody class="bg-light">

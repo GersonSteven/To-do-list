@@ -1,16 +1,16 @@
 ﻿
-<div class="row p-1">
-    <div class="col-7">
+<div class="row">
+    <div class="col">
         <form asp-action="Index" method="get">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Palabra clave" name="searchString">
+                <input type="text" class="form-control" placeholder="Keyword" name="searchString">
                 <div class="input-group-btn">
-                    <button class="btn btn-secondary" type="submit"><i class="bi bi-search"></i></button>
+                    <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
                 </div>
             </div>
         </form>
     </div>
-    <div class="col col-lg-2">
-        <a asp-action="Index" class="btn btn-dark">Lista completa</a>
+    <div class="col-auto">
+        <a asp-action="Index" class="btn btn-secondary">Full list</a>
     </div>
 </div>

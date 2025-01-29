@@ -7,23 +7,24 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item mt-2">
-            <a id="manage" class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hola @UserManager.GetUserName(User)
+            <a id="manage" class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                Hello @UserManager.GetUserName(User)
                 <i class="bi bi-person-circle"></i>
             </a>
         </li>
-        <li class="nav-item mt-2">
+        <li class="nav-item p-2">
             <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button id="logout" type="submit" class="nav-link btn btn-link border-0">Cerrar sesion</button>
+                <button id="logout" type="submit" class="nav-link btn btn-light border-0">Log out</button>
             </form>
         </li>
     }
     else
     {
         <li class="nav-item mt-2">
-            <a class="btn btn-dark me-3" id="register" asp-area="Identity" asp-page="/Account/Register">Registrarse</a>
+            <a class="btn btn-dark me-3" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
         </li>
         <li class="nav-item mt-2">
-            <a class="btn btn-secondary me-3" id="login" asp-area="Identity" asp-page="/Account/Login">Iniciar sesion</a>
+            <a class="btn btn-secondary me-3" id="login" asp-area="Identity" asp-page="/Account/Login">Log in</a>
         </li>
     }
 </ul>
